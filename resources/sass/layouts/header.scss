@@ -1,0 +1,27 @@
+.header {
+    font-weight: 300;
+    &__text {
+        font-size: 1.6rem;
+        color: $white;
+        padding: 1.6rem 6rem;
+        background-color: $blue-darker;
+    }
+    &__info {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+        transition: $transition-time background-color;
+        &:hover {
+            background-color: $blue-darker;
+        }
+    }
+    &__cabinet {
+        text-align: right;
+        padding: 2rem 6rem .8rem 0;
+    }
+    &__cabinet-link {
+        color: $white;
+    }
+    &__cabinet-icon {
+        width: 10px;
+        margin-left: 5px;
+    }
+}

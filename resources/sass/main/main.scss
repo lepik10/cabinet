@@ -1,0 +1,54 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+}
+
+html {
+    font-size: 62.5%;
+    height: 100%;
+}
+body {
+    background: $black;
+    font-family: Roboto;
+    font-weight: 400;
+    font-size: $font-size-normal;
+    line-height: 1.3;
+    height: 100%;
+    color: $black-site;
+}
+h1 {
+    font-size: 2.4rem;
+    font-weight: 400;
+    margin-bottom: 20px;
+}
+h2 {
+    margin-bottom: 20px;
+}
+a {
+    text-decoration: none;
+}
+p, ul, ol {
+    margin-bottom: 2rem;
+}
+img {
+    max-width: 100%;
+}
+table {
+    border-collapse: collapse;
+}
+
+.wrapper {
+    height: 100%;
+    margin-left: $main-aside-width;
+}
+.wrapper-inner {
+    min-height: 100%;
+    padding-bottom: $footer-height;
+    background: url(/images/mountains-1.jpg) no-repeat 100% 100% #1c498a;
+}
+.flex {
+    display: flex;
+    justify-content: space-between;
+}

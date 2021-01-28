@@ -1,0 +1,190 @@
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Regular.eot?30b57652c88c5dbd65de73aba00331a9);
+  src: local("Roboto"), local("Roboto-Regular"), url(/fonts/Roboto-Regular.eot?30b57652c88c5dbd65de73aba00331a9) format("embedded-opentype"), url(/fonts/Roboto-Regular.woff?31012f9b3e3da44f87e842e419bc267a) format("woff"), url(/fonts/Roboto-Regular.ttf?25e40da956314b12d333fe72cc420957) format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Medium.eot?f9f0c87146a33023da7ef5819191114e);
+  src: local("Roboto"), local("Roboto-Regular"), url(/fonts/Roboto-Medium.eot?f9f0c87146a33023da7ef5819191114e) format("embedded-opentype"), url(/fonts/Roboto-Medium.woff?b14ca2d2b289afceb0b0fcfad933124c) format("woff"), url(/fonts/Roboto-Medium.ttf?ef677e217f2009c1685499df33414127) format("truetype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(/fonts/Roboto-Light.eot?d592a653abb7a57fedd8d263f6f187c0);
+  src: local("Roboto"), local("Roboto-Regular"), url(/fonts/Roboto-Light.eot?d592a653abb7a57fedd8d263f6f187c0) format("embedded-opentype"), url(/fonts/Roboto-Light.woff?df0f59d80526acc6d0cd31413184263f) format("woff"), url(/fonts/Roboto-Light.ttf?13d61ef8e609b548d9b5bd989141e829) format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+}
+
+body {
+  background: #000;
+  font-family: Roboto;
+  font-weight: 400;
+  font-size: 1.6rem;
+  line-height: 1.3;
+  height: 100%;
+  color: #373a3c;
+}
+
+h1 {
+  font-size: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+h2 {
+  margin-bottom: 20px;
+}
+
+a {
+  text-decoration: none;
+}
+
+p, ul, ol {
+  margin-bottom: 2rem;
+}
+
+img {
+  max-width: 100%;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+.wrapper {
+  height: 100%;
+  margin-left: 21.875%;
+}
+
+.wrapper-inner {
+  min-height: 100%;
+  padding-bottom: 98px;
+  background: url(/images/mountains-1.jpg) no-repeat 100% 100% #1c498a;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-aside {
+  width: 21.875%;
+  height: 100%;
+  position: fixed;
+  background-color: #fff;
+  padding: 3rem 6rem;
+}
+.main-aside__logo {
+  text-align: center;
+  line-height: 2.4rem;
+}
+.main-aside__logo-link {
+  font-weight: 500;
+  color: #000;
+}
+.main-aside__logo-text {
+  margin-bottom: 0;
+}
+.main-aside__menu-item {
+  list-style: none;
+}
+.main-aside__menu-link {
+  font-size: 2rem;
+  display: block;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 1.6rem 0 1rem 0;
+  border-bottom: 1px solid #d9d9d9;
+  transition: 0.3s border-bottom, 0.3s color;
+}
+.main-aside__menu-link:hover {
+  color: #0089cf;
+  border-color: #0089cf;
+}
+
+.header {
+  font-weight: 300;
+}
+.header__text {
+  font-size: 1.6rem;
+  color: #fff;
+  padding: 1.6rem 6rem;
+  background-color: #19427c;
+}
+.header__info {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  transition: 0.3s background-color;
+}
+.header__info:hover {
+  background-color: #19427c;
+}
+.header__cabinet {
+  text-align: right;
+  padding: 2rem 6rem 0.8rem 0;
+}
+.header__cabinet-link {
+  color: #fff;
+}
+.header__cabinet-icon {
+  width: 10px;
+  margin-left: 5px;
+}
+
+.footer {
+  padding: 3rem 6rem;
+  height: 98px;
+  margin-top: -98px;
+  background-color: #0089cf;
+  align-items: center;
+}
+.footer__dev {
+  color: #fff;
+  font-weight: 300;
+}
+.footer__dev-link {
+  color: #fff;
+  text-decoration: underline;
+}
+.footer__dev-link:hover {
+  text-decoration: none;
+}
+
+.search__form {
+  width: 190px;
+  position: relative;
+}
+.search__input {
+  border: 0.0625rem solid #40a6db;
+  background: none;
+  height: 38px;
+  width: 100%;
+  border-radius: 0.25rem;
+  padding: 0 1rem;
+  color: #fff;
+}
+.search__submit {
+  position: absolute;
+  right: 1px;
+  top: 1px;
+  width: 30px;
+  height: calc(100% - 2px);
+  background: url(/images/icons/loupe.svg) no-repeat 50% 50% #0089cf;
+  background-size: 15px auto;
+  border: none;
+  cursor: pointer;
+}

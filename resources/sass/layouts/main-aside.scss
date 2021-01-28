@@ -1,0 +1,33 @@
+.main-aside {
+    width: $main-aside-width;
+    height: 100%;
+    position: fixed;
+    background-color: $white;
+    padding: 3rem 6rem;
+    &__logo {
+        text-align: center;
+        line-height: 2.4rem;
+    }
+    &__logo-link {
+        font-weight: 500;
+        color: $black;
+    }
+    &__logo-text {
+        margin-bottom: 0;
+    }
+    &__menu-item {
+        list-style: none;
+    }
+    &__menu-link {
+        font-size: 2rem;
+        display: block;
+        color: $gray-darker;
+        padding: 1.6rem 0 1rem 0;
+        border-bottom: 1px solid $gray;
+        transition: $transition-time border-bottom, $transition-time color;
+        &:hover {
+            color: $blue;
+            border-color: $blue;
+        }
+    }
+}

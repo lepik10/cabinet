@@ -1,0 +1,26 @@
+.search {
+    &__form {
+        width: 190px;
+        position: relative;
+    }
+    &__input {
+        border: 0.0625rem solid rgb(64, 166, 219);
+        background: none;
+        height: 38px;
+        width: 100%;
+        border-radius: 0.25rem;
+        padding: 0 1rem;
+        color: $white;
+    }
+    &__submit {
+        position: absolute;
+        right: 1px;
+        top: 1px;
+        width: 30px;
+        height: calc(100% - 2px);
+        background: url(/images/icons/loupe.svg) no-repeat 50% 50% $blue;
+        background-size: 15px auto;
+        border: none;
+        cursor: pointer;
+    }
+}
