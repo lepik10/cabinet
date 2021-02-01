@@ -1,0 +1,20 @@
+.button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    border-radius: $border-radius;
+    border: none;
+    cursor: pointer;
+    font-size: 1.6rem;
+    font-family: Roboto;
+    transition: $transition-time background-color;
+    &_blue {
+        background-color: rgb(0, 137, 207);
+        color: $white;
+    }
+    &_fullwidth {
+        width: 100%;
+    }
+    &:hover {
+        background-color: darken(rgb(0, 137, 207), 20%)
+    }
+}

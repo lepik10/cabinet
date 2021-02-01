@@ -1,0 +1,23 @@
+.input-wrap {
+    display: block;
+    margin-bottom: 1.5rem;
+}
+.input-annotation {
+    margin-bottom: .8rem;
+}
+.input {
+    background: $white;
+    padding: .9rem 1.2rem;
+    border: 1px solid rgb(204, 204, 204);
+    width: 100%;
+    font-size: 1.6rem;
+    font-family: Roboto;
+    border-radius: $border-radius;
+    font-weight: 300;
+    &:focus {
+        border-color: $blue-form;
+    }
+}
+.input-red {
+    color: $red;
+}
