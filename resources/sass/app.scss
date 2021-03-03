@@ -1,6 +1,7 @@
 @import 'main/variables';
 @import 'main/fonts';
 @import 'main/main';
+@import 'main/helpers';
 
 @import 'layouts/main-aside';
 @import 'layouts/header';
@@ -10,3 +11,4 @@
 @import 'components/login-form';
 @import 'elements/form';
 @import 'components/buttons';
+@import 'components/messages';

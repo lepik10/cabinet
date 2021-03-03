@@ -1,6 +1,16 @@
+.form-fields {
+    flex-wrap: wrap;
+}
 .input-wrap {
     display: block;
     margin-bottom: 1.5rem;
+    &_half {
+        width: 48%;
+        margin-right: 4%;
+        &:nth-child(2n) {
+            margin-right: 0;
+        }
+    }
 }
 .input-annotation {
     margin-bottom: .8rem;
@@ -20,4 +30,37 @@
 }
 .input-red {
     color: $red;
+}
+.checkbox-wrap {
+    display: block;
+    margin-bottom: 1.5rem;
+    color: #818a91;
+}
+.form {
+    &__files {
+        margin: 2rem 0;
+        background-color: #d9edf7;
+        border: 1px solid #bcdff1;
+        color: #31708f;
+        padding: 2rem;
+        border-radius: 0.25rem;
+    }
+    &__files-title {
+        font-size: 2rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.1);
+    }
+    &__file {
+        margin-bottom: 1.5rem;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+    &__file-info {
+        font-weight: 300;
+        margin-top: 1rem;
+    }
+}
+.input-file {
+    font-size: 1.6rem;
 }

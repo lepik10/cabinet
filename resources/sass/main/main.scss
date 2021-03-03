@@ -21,13 +21,17 @@ body {
 h1 {
     font-size: 2.4rem;
     font-weight: 400;
-    margin-bottom: 20px;
+    padding-bottom: 40px;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #e4e5e5;
+    color: #0011AB;
 }
 h2 {
     margin-bottom: 20px;
 }
 a {
     text-decoration: none;
+    color: $blue;
 }
 p, ul, ol {
     margin-bottom: 2rem;
@@ -54,10 +58,18 @@ table {
 .flex {
     display: flex;
     justify-content: space-between;
+    &_left {
+        justify-content: flex-start;
+    }
 }
 .content {
     background-color: $white;
     margin: 6rem;
     border-radius: $border-radius;
-    padding: 4rem;
+    padding: 4rem 15rem;
+}
+.link {
+    &:hover {
+        text-decoration: underline;
+    }
 }

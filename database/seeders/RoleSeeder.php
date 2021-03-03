@@ -1,0 +1,35 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+use App\Models\Role;
+
+class RoleSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     *
+     * @return void
+     */
+    public function run()
+    {
+        Role::insert([
+            [
+                'name' => 'Главный администратор'
+            ],
+            [
+                'name' => 'Администратор'
+            ],
+            [
+                'name' => 'Физическое лицо'
+            ],
+            [
+                'name' => 'Юридическое лицо'
+            ],
+            [
+                'name' => 'Индивидуальный предприниматель'
+            ]
+        ]);
+    }
+}

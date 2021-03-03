@@ -27,7 +27,30 @@ class UserFactory extends Factory
             'email' => $this->faker->unique()->safeEmail,
             'email_verified_at' => now(),
             'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
+            'role_id' => rand(3, \App\Models\Role::count()),
             'remember_token' => Str::random(10),
         ];
+    }
+
+    public function createMainAdmin()
+    {
+        return $this->state(function() {
+            return [
+                'name' => 'Vadim',
+                'email' => 'zv.samara@gmail.com',
+                'role_id' => 1
+            ];
+        });
+    }
+
+    public function createAdmin()
+    {
+        return $this->state(function() {
+            return [
+                'name' => 'Vadim',
+                'email' => 'zaytsevvad@mail.ru',
+                'role_id' => 2
+            ];
+        });
     }
 }

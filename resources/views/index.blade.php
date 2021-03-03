@@ -11,5 +11,6 @@
         </div>
         @include('layouts.footer')
     </section>
+    <script src="/js/app.js"></script>
 </body>
 </html>

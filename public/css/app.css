@@ -44,7 +44,10 @@ body {
 h1 {
   font-size: 2.4rem;
   font-weight: 400;
-  margin-bottom: 20px;
+  padding-bottom: 40px;
+  margin-bottom: 40px;
+  border-bottom: 1px solid #e4e5e5;
+  color: #0011AB;
 }
 
 h2 {
@@ -53,6 +56,7 @@ h2 {
 
 a {
   text-decoration: none;
+  color: #0089cf;
 }
 
 p, ul, ol {
@@ -85,12 +89,23 @@ table {
   display: flex;
   justify-content: space-between;
 }
+.flex_left {
+  justify-content: flex-start;
+}
 
 .content {
   background-color: #fff;
   margin: 6rem;
   border-radius: 4px;
-  padding: 4rem;
+  padding: 4rem 15rem;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.center {
+  text-align: center;
 }
 
 .main-aside {
@@ -232,9 +247,20 @@ table {
   width: 10px;
 }
 
+.form-fields {
+  flex-wrap: wrap;
+}
+
 .input-wrap {
   display: block;
   margin-bottom: 1.5rem;
+}
+.input-wrap_half {
+  width: 48%;
+  margin-right: 4%;
+}
+.input-wrap_half:nth-child(2n) {
+  margin-right: 0;
 }
 
 .input-annotation {
@@ -259,6 +285,40 @@ table {
   color: #d9534f;
 }
 
+.checkbox-wrap {
+  display: block;
+  margin-bottom: 1.5rem;
+  color: #818a91;
+}
+
+.form__files {
+  margin: 2rem 0;
+  background-color: #d9edf7;
+  border: 1px solid #bcdff1;
+  color: #31708f;
+  padding: 2rem;
+  border-radius: 0.25rem;
+}
+.form__files-title {
+  font-size: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 0.0625rem solid rgba(0, 0, 0, 0.1);
+}
+.form__file {
+  margin-bottom: 1.5rem;
+}
+.form__file:last-child {
+  margin-bottom: 0;
+}
+.form__file-info {
+  font-weight: 300;
+  margin-top: 1rem;
+}
+
+.input-file {
+  font-size: 1.6rem;
+}
+
 .button {
   display: inline-block;
   padding: 1rem 3rem;
@@ -278,4 +338,20 @@ table {
 }
 .button:hover {
   background-color: #004569;
+}
+
+.message {
+  padding: 1.5rem;
+  border-radius: 4px;
+  margin: 10px 0;
+}
+.message_error {
+  color: #721c24;
+  background-color: #f8d7da;
+  border-color: #f5c6cb;
+}
+.message_success {
+  color: #155724;
+  background-color: #d4edda;
+  border-color: #c3e6cb;
 }
