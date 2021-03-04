@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Role extends Model
 {
     use HasFactory;
+
+    public function scopeUsers($query)
+    {
+        return $query->whereNotIn('id', [1, 2]);
+    }
 }

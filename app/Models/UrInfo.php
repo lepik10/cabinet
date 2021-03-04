@@ -5,12 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class FizInfo extends Model
+class UrInfo extends Model
 {
     use HasFactory;
 
     protected $guarded = [];
-    public static $doc_folder_name = 'fiz';
+    public static $doc_folder_name = 'ur';
 
     public function user()
     {

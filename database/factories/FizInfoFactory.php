@@ -4,10 +4,11 @@ namespace Database\Factories;
 
 use App\Models\FizInfo;
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Storage;
+use App\Traits\Factory\File;
 
 class FizInfoFactory extends Factory
 {
+    use File;
     /**
      * The name of the factory's corresponding model.
      *
@@ -37,17 +38,10 @@ class FizInfoFactory extends Factory
             'address_reg' => $this->faker->realText(100),
             'address_prozh' => $this->faker->realText(100),
             'phone' => '+7 (999) 999-99-99',
-            'doc_copiya_passport' => $this->setFile($this->faker->company() . '.txt', $num),
-            'doc_copiya_inn' => $this->setFile($this->faker->company() . '.txt', $num),
-            'doc_copiya_snils' => $this->setFile($this->faker->company() . '.txt', $num),
-            'doc_doverennost' => $this->setFile($this->faker->company() . '.txt', $num),
+            'doc_copiya_passport' => $this->setFile(rand(1000, 9999) . '.txt', $num, FizInfo::$doc_folder_name),
+            'doc_copiya_inn' => $this->setFile(rand(1000, 9999) . '.txt', $num, FizInfo::$doc_folder_name),
+            'doc_copiya_snils' => $this->setFile(rand(1000, 9999) . '.txt', $num, FizInfo::$doc_folder_name),
+            'doc_doverennost' => $this->setFile(rand(1000, 9999) . '.txt', $num, FizInfo::$doc_folder_name),
         ];
-    }
-
-    private function setFile($filename, $num)
-    {
-        $doc_folder_name = FizInfo::$doc_folder_name;
-        Storage::disk('private')->put( "{$doc_folder_name}/{$num}/{$filename}", 'Contents');
-        return $filename;
     }
 }

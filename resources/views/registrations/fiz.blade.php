@@ -7,6 +7,7 @@
     @endif
     <form action="{{ route('user.create') }}" method="POST" class="form" novalidate enctype="multipart/form-data">
         @csrf
+        <input type="hidden" name="role_id" value="3">
         <div class="form-fields flex flex_left">
             <x-input-wrap name="name" required="true"></x-input-wrap>
             <x-input-wrap name="birth_date" required="true" mask="mask-date"></x-input-wrap>

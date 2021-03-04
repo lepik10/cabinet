@@ -16,8 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', 'PageController@index');
 
 Route::get('/login', 'UserController@login');
-Route::get('/registration', 'UserController@registration');
-Route::post('/registration', 'UserController@create')->name('user.create');
+Route::prefix('registration')->group(function () {
+    Route::get('/{type?}', 'UserController@registration');
+    Route::post('/', 'UserController@create')->name('user.create');
+});
 
 Route::get('test', function() {
     echo __('fields.name.name');

@@ -262,6 +262,9 @@ table {
 .input-wrap_half:nth-child(2n) {
   margin-right: 0;
 }
+.input-wrap_fullwidth {
+  width: 100%;
+}
 
 .input-annotation {
   margin-bottom: 0.8rem;
