@@ -13,12 +13,20 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'PageController@index');
+Route::get('/', 'PageController@index')->name('main');
 
-Route::get('/login', 'UserController@login');
+Route::get('/login/{type?}', 'UserLoginController@index')->name('user.login');
+Route::post('/login', 'UserLoginController@login')->name('user.login.check');
+Route::get('/logout', 'UserLoginController@logout')->name('user.logout');
+
 Route::prefix('registration')->group(function () {
-    Route::get('/{type?}', 'UserController@registration');
-    Route::post('/', 'UserController@create')->name('user.create');
+    Route::get('/{type?}', 'UserRegistrationController@index')->name('user.registration');
+    Route::post('/', 'UserRegistrationController@create')->name('user.create');
+});
+
+Route::prefix('cabinet')->group(function () {
+    Route::get('/', 'CabinetController@index')->name('cabinet.index');
+    Route::get('/info', 'CabinetController@info')->name('cabinet.info');
 });
 
 Route::get('test', function() {

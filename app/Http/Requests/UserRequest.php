@@ -75,11 +75,40 @@ class UserRequest extends FormRequest
             'doc_copiya_polnomoch' => 'required|mimes:pdf,jpeg,jpg,png,doc|max:10000',
         ];
 
+        // Валидация для юридических лиц
+        $userIpValidators = [
+            'name' => 'required',
+            'birth_date' => 'required|size:10',
+            'birth_place' => 'required',
+            'citizenship' => 'required',
+            'passport_ser' => 'required|size:4',
+            'passport_num' => 'required|size:6',
+            'passport_who' => 'required',
+            'passport_date' => 'required|size:10',
+            'address_reg' => 'required',
+            'address_prozh' => 'required',
+            'phone' => 'required|size:18',
+            'inn' => 'nullable|size:12',
+            'snils' => 'nullable|size:11',
+            'ogrnip_ser' => 'required',
+            'ogrnip_num' => 'required',
+            'ogrnip_date' => 'required|size:10',
+            'email' => ['required', Rule::unique('users')],
+            'role_id' => ['required', Rule::in($usersRolesIds)],
+            'password' => 'required|confirmed|min:6',
+            'doc_copiya_passport' => 'required|mimes:pdf,jpeg,jpg,png,doc|max:10000',
+            'doc_copiya_inn' => 'required|mimes:pdf,jpeg,jpg,png,doc|max:10000',
+            'doc_copiya_snils' => 'required|mimes:pdf,jpeg,jpg,png,doc|max:10000',
+            'doc_doverennost' => 'mimes:pdf,jpeg,jpg,png,doc|max:10000',
+            'doc_ogrnip' => 'required|mimes:pdf,jpeg,jpg,png,doc|max:10000',
+        ];
+
         // Разные валидации в зависимости от типа пользователя
 
         switch($this->role_id) {
             case 3: return $userFizValidators;
             case 4: return $userUrValidators;
+            case 5: return $userIpValidators;
         }
 
     }

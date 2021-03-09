@@ -4,21 +4,18 @@ namespace App\Http\Controllers;
 
 use App\Models\FizInfo;
 use App\Models\UrInfo;
+use App\Models\IpInfo;
 use App\Http\Requests\UserRequest;
 use Illuminate\Support\Facades\Hash;
 
-class UserController extends Controller
+class UserRegistrationController extends Controller
 {
-    public function login()
-    {
-        return view('login');
-    }
-
-    public function registration(string $type = null)
+    public function index(string $type = null)
     {
         switch($type) {
             case '': return view('registrations.fiz');
             case 'ur': return view('registrations.ur');
+            case 'ip': return view('registrations.ip');
             default: abort(404);
         }
     }
@@ -58,6 +55,7 @@ class UserController extends Controller
         switch($inputs_user['role_id']) {
             case 3: $user_info = FizInfo::create($inputs_fields); break;
             case 4: $user_info = UrInfo::create($inputs_fields); break;
+            case 5: $user_info = IpInfo::create($inputs_fields); break;
             default: abort(404);
         }
 
@@ -73,7 +71,7 @@ class UserController extends Controller
 
         $inputs_user['password'] = Hash::make($inputs_user['password']);
 
-        $user_info->user()->create($inputs_user); // Сделать зависимость от страницы?
+        $user_info->user()->create($inputs_user);
 
         return back()->with('registration_complete', __('messages.registration_complete'));
     }
