@@ -22,6 +22,7 @@ class CreateUsersTable extends Migration
             $table->unsignedBigInteger('role_id');
             $table->unsignedBigInteger('userable_id')->nullable();
             $table->string('userable_type')->nullable();
+            $table->smallInteger('status')->default(0);
             $table->rememberToken();
             $table->timestamps();
         });

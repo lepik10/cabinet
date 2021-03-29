@@ -34,6 +34,7 @@ class UserTest extends TestCase
         // Убираем лишние элементы и присвиваем нужные значения
         unset($userInfo['email_verified_at']);
         $userInfo['role_id'] = 3;
+        unset($userInfo['status']);
         unset($userInfo['remember_token']);
         $userInfo['doc_copiya_passport'] = $file;
         $userInfo['doc_copiya_inn'] = $file;
@@ -65,6 +66,7 @@ class UserTest extends TestCase
         unset($userInfo['email_verified_at']);
         unset($userInfo['remember_token']);
         $userInfo['role_id'] = 4;
+        unset($userInfo['status']);
         $userInfo['name_ur'] = $userInfo['name'];
         $userInfo['doc_copiya_inn'] = $file;
         $userInfo['doc_ogrn'] = $file;
@@ -91,6 +93,7 @@ class UserTest extends TestCase
         unset($userInfo['email_verified_at']);
         unset($userInfo['remember_token']);
         $userInfo['role_id'] = 5;
+        unset($userInfo['status']);
         $userInfo['doc_copiya_passport'] = $file;
         $userInfo['doc_copiya_inn'] = $file;
         $userInfo['doc_copiya_snils'] = $file;
@@ -109,6 +112,5 @@ class UserTest extends TestCase
 
         $this->assertEquals(session('registration_complete'), __('messages.registration_complete'));
         $this->assertDatabaseHas('users', ['name' => $userInfo['name']]);
-
     }
 }

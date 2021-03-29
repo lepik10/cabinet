@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -20,7 +21,8 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
-        'role_id'
+        'role_id',
+        'status'
     ];
 
     /**
@@ -50,5 +52,20 @@ class User extends Authenticatable
     public function userable()
     {
         return $this->morphTo();
+    }
+
+    public function scopeFiz(Builder $query)
+    {
+        return $query->where('role_id', 3);
+    }
+
+    public function scopeUr(Builder $query)
+    {
+        return $query->where('role_id', 4);
+    }
+
+    public function scopeIp(Builder $query)
+    {
+        return $query->where('role_id', 5);
     }
 }

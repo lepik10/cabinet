@@ -27,8 +27,21 @@ Route::prefix('registration')->group(function () {
 Route::prefix('cabinet')->group(function () {
     Route::get('/', 'CabinetController@index')->name('cabinet.index');
     Route::get('/info', 'CabinetController@info')->name('cabinet.info');
+    Route::get('/downloaddoc/{file}', 'CabinetController@downloadDoc')
+        ->where('file', '.*')
+        ->name('cabinet.download');
 });
 
-Route::get('test', function() {
-    echo __('fields.name.name');
+Route::prefix('admin')->group(function () {
+    Route::get('/login', 'AdminLoginController@index')->name('admin.login');
+    Route::post('/login', 'AdminLoginController@login')->name('admin.login.check');
+    Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::get('/ur', 'AdminController@indexUr')->name('admin.index.ur');
+    Route::get('/user/{user}', 'AdminController@show')->name('admin.show');
+    Route::get('/downloaddoc/{file}', 'AdminController@downloadDoc')
+        ->where('file', '.*')
+        ->name('admin.download');
+
+    // Активация и деактивация пользователя
+    Route::post('/activate/{user}', 'AdminActivateController')->name('admin.activate');
 });
