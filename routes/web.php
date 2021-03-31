@@ -45,3 +45,6 @@ Route::prefix('admin')->group(function () {
     // Активация и деактивация пользователя
     Route::post('/activate/{user}', 'AdminActivateController')->name('admin.activate');
 });
+
+// Обработчик сообщений между админом и клиентом
+Route::post('/message/create/{user}', 'MessageController@create')->name('message.create');

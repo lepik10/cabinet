@@ -18,7 +18,8 @@ class DatabaseSeeder extends Seeder
             UserSeeder::class,
             FizInfoSeeder::class,
             UrInfoSeeder::class,
-            IpInfoSeeder::class
+            IpInfoSeeder::class,
+            //MessageSeeder::class,
         ]);
     }
 }

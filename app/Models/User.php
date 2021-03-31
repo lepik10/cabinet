@@ -54,6 +54,11 @@ class User extends Authenticatable
         return $this->morphTo();
     }
 
+    public function messages()
+    {
+        return $this->hasMany(Message::class);
+    }
+
     public function scopeFiz(Builder $query)
     {
         return $query->where('role_id', 3);

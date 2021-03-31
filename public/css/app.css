@@ -382,32 +382,28 @@ table {
   color: #0011AB;
 }
 
-.admin-messages__item {
-  padding: 3rem;
-  font-size: 1.4rem;
+.admin-messages .alert {
+  margin-bottom: 0;
+  padding: 30px;
+  border: none;
+  border-radius: 0;
+  font-size: 14px;
   color: #070707;
   position: relative;
+}
+.admin-messages .alert-success {
+  background-color: #dff0d8;
+}
+.admin-messages .alert-warning {
   background-color: #fcf8e3;
 }
-.admin-messages__content {
-  margin-right: 8rem;
+.admin-messages .alert-content {
+  margin-right: 80px;
   border-right: 1px solid #E4E4E4;
 }
-.admin-messages__title {
-  font-size: 1.6rem;
-  margin-bottom: 5px;
-}
-.admin-messages__body {
-  margin-bottom: 0;
-  font-weight: 300;
-}
-.admin-messages__date {
+.admin-messages .date {
   position: absolute;
   top: 50%;
   margin-top: -22px;
   right: 20px;
-}
-.admin-messages__date-line {
-  margin-bottom: 5px;
-  font-weight: 300;
 }

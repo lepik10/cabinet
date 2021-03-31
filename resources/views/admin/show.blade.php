@@ -13,6 +13,11 @@
         <div id="history" class="admin-messages-wrap">
             <h1>История Сообщений</h1>
             <div class="admin-messages">
+                @forelse($user->messages()->latest()->get() as $message)
+                    <x-admin-message-item :message="$message"></x-admin-message-item>
+                @empty
+                    Сообщений нет
+                @endforelse
                 <div class="alert alert-warning">
                     <div class="alert-content">
                         <h3>Форма: Заявление на подготовку расчета планируемого максимального часового расхода газа</h3>
@@ -49,9 +54,14 @@
 
             </div>
 
-            <form class="message-form" method="post" action=" http://svgk.teamaa.ru/admin/users-fiz/3/add-message   ">
-                <input type="hidden" name="_token" value="UlA7flguBDlCjYhRcmc9Hthtpz57k1a5urzy9Z75">                <textarea name="body"></textarea>
+            <form class="message-form" method="POST" action="{{ route('message.create', $user->id) }}">
+                @csrf
+                <textarea name="content"></textarea>
+                @error('content')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                @enderror
                 <input type="submit" class="btn button-blue" value="Отправить">
+
             </form>
         </div>
 
